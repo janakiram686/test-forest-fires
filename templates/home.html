@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wildfire Prediction Input Form</h1>
+    <form  method="post">
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" id="temperature" name="temperature" step="0.01" required>
+
+        <label for="rh">Relative Humidity (%):</label>
+        <input type="number" id="rh" name="rh" step="0.01" required>
+
+        <label for="ws">Wind Speed (m/s):</label>
+        <input type="number" id="ws" name="ws" step="0.01" required>
+
+        <label for="rain">Rain (mm):</label>
+        <input type="number" id="rain" name="rain" step="0.01" required>
+
+        <label for="ffmc">FFMC:</label>
+        <input type="number" id="ffmc" name="ffmc" step="0.01" required>
+
+        <label for="dmc">DMC:</label>
+        <input type="number" id="dmc" name="dmc" step="0.01" required>
+
+       
+
+        <label for="isi">ISI:</label>
+        <input type="number" id="isi" name="isi" step="0.01" required>
+
+
+        
+
+        <label for="classes">Classes:</label>
+        <select id="classes" name="classes" required>
+            <option value="" disabled selected>Select class</option>
+            <option value="1">Fire</option>
+            <option value="0">Not fire</option>
+        </select>
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>
+        The FWI prediction is {{results}}
+    </h2>
+</body>
+</html>
